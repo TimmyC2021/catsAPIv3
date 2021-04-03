@@ -2,17 +2,17 @@ const cats = [
   {
     "id": 1,
     "name": "Oscar",
-    "short-hair": "true",
+    "short_hair": true,
     "colour": "tabby"
   },{
     "id": 2,
     "name": "Chester",
-    "short-hair": "true",
+    "short_hair": true,
     "colour": "tabby"
   },{
     "id": 3,
     "name": "Sid",
-    "short-hair": "false",
+    "short_hair": false,
     "colour": "black"
   }
 ]
