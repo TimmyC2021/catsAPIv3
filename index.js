@@ -1,13 +1,40 @@
 import express from 'express';
 import cors from 'cors';
-import cats from './cats.js';
+// import cats from './cats.js';
+// import cats from './cats.json';
 
+import { firestore, auth } from './firebase.js';
 
 const app = express();
 
 app.use(cors());
 
 app.use(express.json());
+
+// Get initial data
+const cats = () => {  
+  (firestore.collection("cats").get())
+  .then(repsonse => { 
+    console.log(response);
+    return response});
+  }
+
+// Firestore methods
+
+// Create
+const createCat = (newCat) => {
+  firestore.collection("cats").doc(newCat.id).set(newCat)
+}
+
+// Read
+const getCat = (catID) => {  
+(firestore.collection("cats").doc(catID).get())
+.then(repsonse => console.log(response));
+}
+
+
+
+// API methods
 
 
 app.get('/cats', (reqCats, resCats) => {
